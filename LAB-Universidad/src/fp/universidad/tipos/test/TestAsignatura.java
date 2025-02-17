@@ -13,6 +13,8 @@ public class TestAsignatura {
 		
 		System.out.println(fp);
 		
+		System.out.println(fp);
+		
 	}
 
 	
