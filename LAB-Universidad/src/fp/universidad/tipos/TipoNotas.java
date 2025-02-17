@@ -1,6 +1,6 @@
 package fp.universidad.tipos;
 
-public enum TipoNota {
+public enum TipoNotas {
 
 	
 	PRIMERACONVOCATORIA, SEGUNDACONVOCATORIA, TERCERACONVOCATORIA
