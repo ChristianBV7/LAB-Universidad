@@ -24,6 +24,16 @@ public class Persona {
 
 
 
+	public Persona(String nombre, String apellidos, LocalDate fechaNacimiento, String dNI) {
+		super();
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.fechaNacimiento = fechaNacimiento;
+		DNI = dNI;
+	}
+
+
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -81,9 +91,9 @@ public class Persona {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	String tostring() {
+	 //"28864657W – García Vaquero, Pascual – 15/09/1998". 
+	public String toString() {
 		
-		return "(" + DNI + nombre + ")" ;
+		return "(" + DNI + "-"  + nombre + "-" + apellidos + "-" + fechaNacimiento + "-" + email + ")" ;
 	}
 }
