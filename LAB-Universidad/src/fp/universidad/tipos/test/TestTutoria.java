@@ -1,5 +1,6 @@
 package fp.universidad.tipos.test;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -12,7 +13,7 @@ public class TestTutoria {
 		
 		
 		
-		Tutoria z = new Tutoria(1 , LocalTime.of(10, 40), LocalTime.of(11, 40));
+		Tutoria z = new Tutoria(DayOfWeek.FRIDAY , LocalTime.of(10, 40), LocalTime.of(11, 40));
 		
 		
 		
