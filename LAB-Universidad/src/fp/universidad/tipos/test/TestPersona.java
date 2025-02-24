@@ -15,10 +15,11 @@ public class TestPersona {
 		// TODO Auto-generated method stub
 		
 		
-		Persona p1= new Persona( "christian", "ballesta valderrama", LocalDate.of(2006,4 ,14 ), " 23423124A","djdjweoef@xd.com");
-		
+		Persona p1= new Persona( "christian", "ballesta valderrama", LocalDate.of(2006,4 ,14 ), " 23234414a","djdjweoefxd.com");
+		Persona p2= new Persona( "christian", "ballesta valderrama", LocalDate.of(2006,4 ,14 ), " 23231444a","djdjweoefxd.com");
 		
 		System.out.println(p1);
+		System.out.println(p1.compareTo(p2));
 	
 		
 		

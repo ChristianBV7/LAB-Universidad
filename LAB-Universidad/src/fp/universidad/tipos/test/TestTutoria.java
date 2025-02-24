@@ -13,11 +13,13 @@ public class TestTutoria {
 		
 		
 		
-		Tutoria z = new Tutoria(DayOfWeek.FRIDAY , LocalTime.of(10, 40), LocalTime.of(11, 40));
+		Tutoria z = new Tutoria(DayOfWeek.THURSDAY, LocalTime.of(10, 40), 20);
+		Tutoria r= new Tutoria(DayOfWeek.MONDAY, LocalTime.of(10, 40), 20);
 		
 		
 		
 		System.out.println(z);
+		System.out.println(z.compareTo(r));
 		
 		
 		

@@ -20,6 +20,7 @@ public class TestAsignatura {
 		
 		
 		System.out.println(fp.compareTo(adda));
+		System.out.println(fp.equals(adda));
 		
 	}
 

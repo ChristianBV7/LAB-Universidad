@@ -12,9 +12,12 @@ public class TestNotas {
 		
 		
 		
-		Notas x = new Notas("mates", LocalDate.of(2023, 4, 10), 7.2, true , TipoNotas.PRIMERACONVOCATORIA);
+		Notas x = new Notas("mates", LocalDate.of(2023, 4, 10), 9.0, true , TipoNotas.PRIMERACONVOCATORIA, "matriculaaaaaa");
+		Notas z = new Notas("mates", LocalDate.of(2023, 4, 10), 9.0, true , TipoNotas.PRIMERACONVOCATORIA, "matriculaaaaaa");
+		
 			
 			System.out.println(x );
+			System.out.println(x.compareTo(z));
 
 
 		}

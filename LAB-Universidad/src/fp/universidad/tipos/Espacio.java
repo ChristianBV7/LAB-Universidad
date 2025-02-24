@@ -1,6 +1,10 @@
 package fp.universidad.tipos;
 
-public class Espacio {
+import java.util.Objects;
+
+import fp.utiles.Checkers;
+
+public class Espacio implements Comparable <Espacio>     {
 
 	
 	private TipoEspacio tipo;
@@ -20,6 +24,9 @@ public class Espacio {
 		
 	public Espacio(TipoEspacio tipo, String espacio, Integer capacidad, Integer planta) {
 		super();
+		
+		Checkers.check("numero incorrecto", capacidad > 0 );
+		
 		this.tipo = tipo;
 		this.espacio = espacio;
 		this.capacidad = capacidad;
@@ -81,10 +88,57 @@ public class Espacio {
 
 
 	public String toString() {
-		 return  espacio + "(" + planta + ")";
+		 return  espacio + "(" + planta + "," +  capacidad +  ")";
 		
 		
 	}
+
+
+
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(espacio, planta);
+	}
+
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Espacio other = (Espacio) obj;
+		return Objects.equals(espacio, other.espacio) && Objects.equals(planta, other.planta);
+	}
+
+
+
+
+	@Override
+	public int compareTo(Espacio o) {
+		
+		
+		int r;
+		
+		r= getPlanta().compareTo(o.getPlanta());
+		
+		
+		if (r==0) {
+			
+			r= getEspacio().compareTo(o.getEspacio());
+			
+		}
+		
+		return r;
+	}
+	
+	
+	
 	
 	
 	
