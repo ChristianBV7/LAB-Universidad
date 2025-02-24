@@ -2,6 +2,8 @@ package fp.universidad.tipos;
 
 import java.time.LocalDate;
 
+import fp.utiles.Checkers;
+
 public class Persona {
 	
 	
@@ -13,8 +15,38 @@ public class Persona {
 	
 	
 	
+	
+	
+
+	private Boolean sonDigitos(String cadena) {
+		
+		Boolean res= true;
+			
+			for( int i=0; i<cadena.length(); i++) {
+				
+				if( ! Character.isDigit(cadena.charAt(i))) {
+					
+					res= false;
+					break;
+					
+				}
+			}
+			
+			return res;
+		}  
+	
+	
 	public Persona(String nombre, String apellidos, LocalDate f, String d, String e) {
 		super();
+		
+		
+		
+		Checkers.check("dni incorrecto", sonDigitos(d) && d.length()==8 );
+		Checkers.check("DNI incorrecto", !Character.isLetter(d.charAt(d.length()-1)));
+		
+		
+				
+	
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		fechaNacimiento = f;
