@@ -9,14 +9,14 @@ public class TestAsignatura {
 		// TODO Auto-generated method stub
 
 		
-		Asignatura fp= new Asignatura("fundamentos de programacion", "0000325", 12.0, TipoAsignatura.ANUAL,  1);
+		Asignatura fp= new Asignatura("fundamentos de programacion", "0000325", 12.0f, TipoAsignatura.ANUAL,  1);
 		
 		System.out.println(fp);
 		
 		System.out.println(fp);
 		
 		
-		Asignatura adda= new Asignatura("analisis y diseños de datos y algoritmos","0000589", 12.0, TipoAsignatura.ANUAL, 2);
+		Asignatura adda= new Asignatura("analisis y diseños de datos y algoritmos","0000589", 12.0f, TipoAsignatura.ANUAL, 2);
 		
 		
 		System.out.println(fp.compareTo(adda));

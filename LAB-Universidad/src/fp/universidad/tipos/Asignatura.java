@@ -5,7 +5,7 @@ import java.util.Objects;
 import fp.utiles.Checkers;
 
 public record Asignatura(String nombre, String codigo, 
-		Double creditos,TipoAsignatura tipo, Integer curso ) implements Comparable<Asignatura>{
+		float creditos,TipoAsignatura tipo, Integer curso ) implements Comparable<Asignatura>{
 
 	// constructor compacto para modificar el canonico
 	

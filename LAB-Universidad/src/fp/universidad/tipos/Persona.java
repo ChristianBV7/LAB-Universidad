@@ -23,7 +23,7 @@ public class Persona implements Comparable <Persona> {
 		
 		Boolean res= true;
 			
-			for( int i=0; i<cadena.length(); i++) {
+			for( int i=0; i<cadena.length()-1; i++) {
 				
 				if( ! Character.isDigit(cadena.charAt(i))) {
 					
@@ -42,9 +42,9 @@ public class Persona implements Comparable <Persona> {
 		
 		
 		
-		Checkers.check("dni incorrecto", sonDigitos(DNI) && DNI.length()==8 );
-		Checkers.check("DNI incorrecto", !Character.isLetter(DNI.charAt(DNI.length()-1)));
-		Checkers.check("email incorrecto", email.contains("@"));
+		Checkers.check("dni incorrecto", sonDigitos(DNI) && DNI.length()==9 );
+		Checkers.check("DNI incorrecto", Character.isLetter(DNI.charAt(DNI.length()-1)));
+		Checkers.check("email incorrecto", e.contains("@"));
 		
 		
 				
@@ -119,6 +119,12 @@ public class Persona implements Comparable <Persona> {
 	public String getEmail() {
 		return email;
 	}
+	
+	
+	public Integer getEdad() {
+		
+		return LocalDate.now().getYear()-fechaNacimiento.getYear();
+	}
 
 
 
@@ -128,7 +134,7 @@ public class Persona implements Comparable <Persona> {
 	 //"28864657W – García Vaquero, Pascual – 15/09/1998". 
 	public String toString() {
 		
-		return "(" + DNI + "-"  + nombre + "-" + apellidos + "-" + fechaNacimiento + "-" + email + ")" ;
+		return   DNI + "-"  + nombre + "-" + apellidos + "-" + fechaNacimiento + "-" + email  ;
 	}
 
 

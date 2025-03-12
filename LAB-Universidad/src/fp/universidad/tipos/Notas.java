@@ -5,7 +5,7 @@ import java.util.Objects;
 
 import fp.utiles.Checkers;
 
-public record Notas( String asignatura, LocalDate añoEscolar, Double nota,
+public record Notas( String asignatura, LocalDate añoEscolar, Double valor,
 							Boolean estado, TipoNotas tipo, String matriculaHonor) implements Comparable <Notas> {
 	
 	
@@ -13,23 +13,23 @@ public record Notas( String asignatura, LocalDate añoEscolar, Double nota,
 	public Notas {
 		
 		
-		Checkers.check("nota incorrecta ", nota>= 0 && nota<=10);
-		Checkers.check("no hay matricula", nota >=9);
+		Checkers.check("nota incorrecta ", valor>= 0 && valor<=10);
+		Checkers.check("no hay matricula", valor >=9);
 	}
 	
 	
  public String CalculaCalificacion()  {
-	 if (nota<5) {
+	 if (valor<5) {
 		 return "suspenso";
 		 
 		 
 	 }
 	 
-	 else if(nota<7) {
+	 else if(valor<7) {
 		 return "aprobado";
 	 }
 	 
-	 else if ( nota<9) {
+	 else if ( valor<9) {
 		 return "notable";
 				 
 	 }
@@ -46,7 +46,7 @@ public record Notas( String asignatura, LocalDate añoEscolar, Double nota,
  
  public String toString() {
 		
-		return "(" + asignatura + "," + añoEscolar + "," + tipo + ","+ nota + ","+ CalculaCalificacion() + ")";
+		return "(" + asignatura + "," + añoEscolar + "," + tipo + ","+ valor + ","+ CalculaCalificacion() + ")";
 	}
 
 
