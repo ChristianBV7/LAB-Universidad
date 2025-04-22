@@ -1,5 +1,6 @@
 package fp.universidad.tipos;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 import fp.utiles.Checkers;
@@ -141,7 +142,19 @@ public class Espacio implements Comparable <Espacio>     {
 	
 	
 	
-	
+	// Constructor de String añadido en PARTE 04
+		public Espacio(String espacioStr) {
+			// espacioStr = "A0.10,0,100,TEORIA"
+			Checkers.checkNoNull(espacioStr);
+			String [] trozos = espacioStr.split(",");
+			String mensaje = String.format("Formato no valido. Trozos: %d <%s>", trozos.length, Arrays.toString(trozos));   // entero %d, string %s
+			Checkers.check(mensaje, trozos.length == 4);
+			
+			this.espacio= trozos[0].strip();
+			this.planta = Integer.parseInt(trozos[1].strip());
+			setCapacidad(Integer.parseInt(trozos[2].strip()));
+			this.tipo = TipoEspacio .valueOf(trozos[3].strip());
+		}
 }
 
 	

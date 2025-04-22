@@ -3,6 +3,8 @@ package fp.universidad.tipos;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 import fp.utiles.Checkers;
 
@@ -177,8 +179,46 @@ public class Centro implements Comparable <Centro>{
 			}
 		return res;
 		}
+	
+	
+	public Set<Espacio> getEspacios() {
+		// Devolvemos una copia de espacios, esto hay que añadirlo siempre, esto se hace para que no devuelva la lista vacía.
+		return new HashSet<Espacio>(getEspacios());
+	}
+	
+	
+	public Set<Despachos> getDespacho(){
 		
+		Set<Despachos> despachos= new HashSet<Despachos>(); 
+		
+		
+		for(Espacio e : getEspacios()) {
+			if ( e instanceof Despachos) {
+				despachos.add((Despachos) e);
+			}
+		} return despachos;
+		
+		
+	}
+		
+
+
+public SortedMap<String, Despachos> getDespachosPorProfesor (){
+	
+	SortedMap<String, Despachos> res= new TreeMap<>();
+	for (Despachos d: getDespacho()) {
+		for (Profesor p: d.getProfesores()) {
+			res.put(p.toString(), d);
+		}
+		
+	}
+	return res;
 }
+}
+	
+
+
+
 	// dada una planta, devuelva la suma de las capacidades de esa planta
 	
 
